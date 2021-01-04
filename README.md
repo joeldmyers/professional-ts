@@ -2,6 +2,47 @@
 
 This repo was forked from https://github.com/mike-north/professional-ts. Original notes from Mike North below.
 
+## Latest Typescript Features
+
+### Optional Chaining
+
+```
+const x: {
+  user: {
+    name: string;
+    address?: {
+      street: string;
+      city: string;
+    };
+  };
+} = undefined as any;
+
+console.log(x.user.address?.city);
+
+```
+
+If address is undefined, above expression will be terminated early. Note, this adds a condition
+
+### Nullish Coalescing
+
+Like using the || for default values, but with ?? - safer bc it specifically handles '' (empty string) or 0 coercing to false.
+
+Ex:
+
+```
+class Foo {
+  name;
+  constructor(rawName?: string) {
+    // Nullish Coalescing - ??
+    this.name = rawName ?? '(no name)';
+  }
+
+  log() {
+    console.log(this.name);
+  }
+}
+```
+
 ## Rest Client
 
 Rest Client VS Code Extension is cool! Add API Examples. Will need to circle back on this to review again.
