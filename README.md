@@ -97,7 +97,27 @@ const val: JSONValue = {
 }
 ```
 
+### Type Literals - only works in v4.1
+
+```
+type Corner = `${'top'|'bottom'}-${'left'|'right'}`;
+```
+
 The above works.
+
+This can create a set of strings, top-left, top-right, bottom-left, bottom-right.
+
+### Ts-expect-error
+
+```
+// @ts-expect-error
+const num1: number = 'five';
+// @ts-ignore
+const num2: number = 'six';
+
+```
+
+Ts-expect-error is better because ts-ignore is pretty vague.
 
 ## Rest Client
 
