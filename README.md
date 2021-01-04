@@ -43,6 +43,62 @@ class Foo {
 }
 ```
 
+### Variadic Tuple Types:
+
+So refresh, normal tuple in TS (from typescript docs):
+
+```
+// Declare a tuple type
+let x: [string, number];
+// Initialize it
+x = ["hello", 10]; // OK
+// Initialize it incorrectly
+x = [10, "hello"]; // Error
+```
+
+Type 'number' is not assignable to type 'string'.
+Type 'string' is not assignable to type 'number'.
+
+Variadic tuple types allow us to do the following:
+
+`type Foo<T extends any[]> = [boolean, ...T, boolean];`
+
+### Labeled Tuple Types
+
+// this is bad because there is no label for each value in the tuple.
+`type Address = [number, string, string, number];`
+
+function printAddress(...address: Address) {
+// now we have to go through specific index, which is annoying.
+}
+
+`type Address = [streetNumber: number, city: string, state: string, postal: number];`
+
+In the above, it helps with autocomplete.
+
+### Recursive Type Aliases
+
+```
+type JSONValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JSONValue[]
+  | {
+    [k: string]: JSONValue;
+  }
+
+const val: JSONValue = {
+  name: 'joel',
+  address: {
+    street: 'Spear St'
+  }
+}
+```
+
+The above works.
+
 ## Rest Client
 
 Rest Client VS Code Extension is cool! Add API Examples. Will need to circle back on this to review again.
