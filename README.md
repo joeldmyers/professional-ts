@@ -1,3 +1,11 @@
+# My notes
+
+This repo was forked from https://github.com/mike-north/professional-ts. Original notes from Mike North below.
+
+## Rest Client
+
+Rest Client VS Code Extension is cool! Add API Examples. Will need to circle back on this to review again.
+
 # Professional TypeScript
 
 ![Node.js CI](https://github.com/mike-north/professional-ts/workflows/Node.js%20CI/badge.svg)
